@@ -1,7 +1,5 @@
 // Core Game Engine
 import {
-  CANVAS_WIDTH,
-  CANVAS_HEIGHT,
   GROUND_Y,
   DOG_SIZE,
   DOG_START_X,
@@ -11,13 +9,12 @@ import {
   MAX_FALL_SPEED,
   SPAWN_CONFIG,
   ENTITY_SIZES,
-  ENTITY_COLORS,
-  ENTITY_VALUES,
   STARTING_LIVES,
   MAX_LIVES,
   DIFFICULTY_CONFIG,
   ENTITY_TYPES,
 } from './constants';
+import type { EntityType } from './constants';
 import { GameEntity, Dog, CollisionResult } from '../types';
 
 export class GameEngine {

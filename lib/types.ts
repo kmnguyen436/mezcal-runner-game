@@ -61,7 +61,7 @@ export interface GameOverProps {
   level: number;
   highScore: number;
   onPlayAgain: () => void;
-  onLeaderboard: () => void;
+  onBackToMenu: () => void;
 }
 
 export interface CollisionResult {

@@ -1,69 +1,23 @@
-'use client';
-
-import React from 'react';
 import Button from './Button';
 import { MainMenuProps } from '@/lib/types';
 
-export default function MainMenu(props: MainMenuProps) {
+export default function MainMenu({ onStartGame, highScore }: MainMenuProps) {
   return (
-    <div className="bg-slate-800 rounded-lg shadow-2xl p-8 md:p-12 text-center max-w-2xl mx-auto border border-slate-700">
-      <div className="mb-8">
-        <h1 className="text-5xl md:text-6xl font-bold text-blue-400 mb-2">
-          🐕 Mezcal Runner
-        </h1>
-        <p className="text-xl text-slate-300">Help Mezcal avoid poop and collect treats!</p>
-      </div>
-
-      <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg p-8 mb-8 border-2 border-slate-600">
-        <h2 className="text-2xl font-bold text-slate-100 mb-4">How to Play</h2>
-        <ul className="text-left space-y-3 text-slate-300">
-          <li className="flex items-start gap-3">
-            <span className="text-2xl">⌨️</span>
-            <span>
-              Press <strong>SPACE</strong> or <strong>UP ARROW</strong> to jump
-            </span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-2xl">💩</span>
-            <span>
-              Avoid <strong>poop</strong> or lose a life
-            </span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-2xl">🦴</span>
-            <span>
-              Collect <strong>bones</strong> for <strong>3 points</strong>
-            </span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-2xl">🥣</span>
-            <span>
-              Collect <strong>kibble</strong> for <strong>1 point</strong>
-            </span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-2xl">❤️</span>
-            <span>
-              Collect <strong>heart treats</strong> for extra lives (max 10)
-            </span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-2xl">📈</span>
-            <span>
-              Level up as you gain points to increase difficulty!
-            </span>
-          </li>
+    <section className="game-card menu-card">
+      <div className="menu-art" aria-hidden="true"><span>✿</span><span>🐕</span><span>✳</span></div>
+      <p className="game-eyebrow">A LITTLE ADVENTURE WITH A VERY GOOD DOG</p>
+      <h1>Mezcal <em>Runner.</em></h1>
+      <p className="game-intro">A little romp, a few treats, and one very happy pup.</p>
+      <div className="instructions">
+        <h2>Before you head out...</h2>
+        <ul>
+          <li><span aria-hidden="true">↟</span> Jump with Space, the up arrow, or the Jump button.</li>
+          <li><span aria-hidden="true">✳</span> Avoid poop, collect bones and kibble for points, and hearts for lives.</li>
+          <li><span aria-hidden="true">❋</span> Focus the game area to use Space, ↑, or Esc; the buttons work too.</li>
         </ul>
+        <p className="access-note">This is a visual, timed game; gameplay cues are not yet available as audio.</p>
       </div>
-
-      <div className="mb-8">
-        <div className="text-slate-400 text-lg mb-2">Your Best Score</div>
-        <div className="text-5xl font-bold text-green-400">{props.highScore}</div>
-      </div>
-
-      <Button onClick={props.onStartGame} variant="primary" size="large">
-        🎮 Start Game
-      </Button>
-    </div>
+      <div className="menu-actions"><Button onClick={onStartGame}>Let&apos;s play <span aria-hidden="true">↗</span></Button><p>YOUR BEST <strong>{highScore}</strong></p></div>
+    </section>
   );
 }
